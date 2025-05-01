@@ -9,7 +9,9 @@
   *   [Data cleaning, transaformations and troubleshooting](#Data-cleaning-transformations-and-troubleshooting)
   *   [Behavioral-data-analysis](#Behavioral-data-analysis)
   *   [EEG-data-analysis-and-Machine-Learning](#EEG-data-analysis-and-Machine-Learning)
- 
+
+The following project is based on my [dissertation](https://escholarship.org/uc/item/9436715m).
+
 ## Context-and-reseach-goals
 If I tell you the location of a “target” object, you’ll be able to find it faster. Think “Can you find my keys before we leave the house?” versus 
 “Can you find my keys that are on the coffee table?” Having context about location helps narrow down where your target is. However our visual environment is also filled with “distractors” that constantly vie for our attention. How does knowledge of a distractor's location impact our ability to find the target? For example: in a video game, before a cluttered game scene appears, a flashing icon briefly highlights a corner where a non-interactive square (the distractor) will be. Your task is to quickly locate a glowing orb (the target) that appears in the same scene. Does previewing the location of the distractor square help you find the target orb faster or does it slow you down in identifying the orb? Or perhaps does it have no impact at all?
@@ -17,7 +19,7 @@ If I tell you the location of a “target” object, you’ll be able to find it
 
 **Research goals**
 
-The goal of this study was to examine how advance knowledge of a distractor’s location impacts how quickly we find our target. Please see my [dissertation](https://escholarship.org/uc/item/9436715m) for more details. 
+The goal of this study was to examine how advance knowledge of a distractor’s location impacts how quickly we find our target. 
 There are several possibilities: 
 1) knowledge of a distractor’s location can help find our target faster by narrowing down/reducing where the target can be,
 2) knowledge of a distractor location can help us suppress/inhibit that location thereby making finding that target easier or
