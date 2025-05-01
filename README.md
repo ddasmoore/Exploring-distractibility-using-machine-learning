@@ -17,7 +17,7 @@ If I tell you the location of a “target” object, you’ll be able to find it
 
 **Research goals**
 
-The goal of this study was to examine how advance knowledge of a distractor’s location impacts how quickly we find our target.
+The goal of this study was to examine how advance knowledge of a distractor’s location impacts how quickly we find our target. Please see my [dissertation](https://escholarship.org/uc/item/9436715m) for more details. 
 There are several possibilities: 
 1) knowledge of a distractor’s location can help find our target faster by narrowing down/reducing where the target can be,
 2) knowledge of a distractor location can help us suppress/inhibit that location thereby making finding that target easier or
