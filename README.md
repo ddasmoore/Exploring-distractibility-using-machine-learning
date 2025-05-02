@@ -6,6 +6,7 @@
 * [Executive summary of insights](#Executive-summary-of-insights)
 * [Technical Details and detailed insights](#Technical-Details-and-detailed-insights)
   *   [Data collection](#Data-collection)
+  *   [Tools and Packages](#Tools-and-packages)
   *   [Data cleaning, transaformations and troubleshooting](#Data-cleaning-transformations-and-troubleshooting)
   *   [Behavioral-data-analysis](#Behavioral-data-analysis)
   *   [EEG-data-analysis-and-Machine-Learning](#EEG-data-analysis-and-Machine-Learning)
@@ -21,9 +22,9 @@ If I tell you the location of a “target” object, you’ll be able to find it
 
 The goal of this study was to examine how advance knowledge of a distractor’s location impacts how quickly we find our target. 
 There are several possibilities: 
-1) knowledge of a distractor’s location can help find our target faster by narrowing down/reducing where the target can be,
-2) knowledge of a distractor location can help us suppress/inhibit that location thereby making finding that target easier or
-3) knowledge of a distractor’s location can in fact distract us from finding the target. or
+1) knowledge of a distractor’s location can help us find our target faster by narrowing down/reducing where the target can be
+2) knowledge of a distractor location can help us suppress/inhibit that location thereby making finding that target easier
+3) knowledge of a distractor’s location can in fact distract us from finding the target
 4) knmowledge of a distractor's location can have no impact at all
 
 ## Method
@@ -37,22 +38,24 @@ period, either a cue indicating the most likely location of the target (in blue)
 
 B. This image is a representation of the cue manipulation. Since I used a 80 percent valid cue, we had valid and invalid types of trials. 
 
-C. This image shows the target and distractor presented to the participants. The target was a high frequency gabor, while the distractor was a low frequency gabor. The lines in the gabor could be
-pointing in the same direction (congruent) or in opposing direction (incongruent). This manipuation- called a Flanker manipulation- provides an additional attentional challenge and is widely used in psychology experiements
-to study attention in human beings. 
+C. This image shows the target and distractor presented to the participants. The target was a high frequency gabor, while the distractor was a low frequency gabor. The similarity between them is what makes creates distraction. The lines in the gabor could be pointing in the same direction (congruent) or in opposing direction (incongruent). This manipuation- called a Flanker manipulation- provides an additional attentional challenge and is widely used in psychology experiements to study attention in human beings. Typically we see that trials with incongruent distractors are slower (more distracting) than congruent distractors. This is our baseline measure for distraction. 
 
 ## Executive-summary-of-insights
 - Based on the both the behavioral and EEG data, there was little evidence of inhibition of a distractor location as a result of distractor cueing. It is more likely that a cue or preview of a distractor location enables a “attend away” or “tag and avoid” mechanism in the brain.
-- Compared to no cue or no preview of location, curing the location of a target is  more effective in reducing distraction caused by a distractor present than cueing the location of the distractor.
+- Compared to no cue or no preview of location, cueing the location of a target is  more effective in reducing distraction than cueing the location of the distractor.
 
 
 ## Technical-Details-and-detailed-insights
 
 ## Data-collection
 
-n=27 participants completed 1320 trials of the task described above. I collected response time and accuracy of the participants as they identified the target on each trial. I recorded eye tracking data
-so that I could eliminate trials where participants blinked or looked away from the fixation cross (so attention to target is not conflated with eye movement to the target). I recorded brain activity data using EEG
+n=27 participants completed 1320 trials each of the task described above. I collected response time and accuracy of the participants as they identified the target on each trial. I recorded eye tracking data
+so that I could eliminate trials where participants blinked or looked away from the fixation cross (so attention to target is not conflated with eye movement to the target). I recorded brain activity using EEG
 to examine how distractor's location is processed in the brain as a function of the cue manipulation. Each participant's data was collected over three days of testing, each testing sessions took 90 minutes. The visual task was created using custom scripts in MATLAB (psychtoolbox package)
+
+## Tools-and-packages
+The visual task and all analyses were conducted in MATLAB. I have included sample scripts above. 
+
 
 ## Data-cleaning-and-preprocessing
 - I re-referenced, re-sampled and epoched the EEG data according to standard methods in the field.
@@ -72,7 +75,7 @@ Typically, the presence of an incongruent distractor is more distracting than wh
 
 ## EEG-data-analysis-and-Machine-Learning
 
-The primary analytical technique for the EEG data was an Inverted Encoding Model (IEM). This multivariate pattern analysis method was applied to specific brain waves that are known to correlate with attention (alpha (8-12 Hz) and theta (4-8 Hz) frequency bands). IEM allows us to understand the extent to which target and distractor locations are processed in the brain. Whatever is better processed or attended will have a sharper and consistent representation in IEM compared to what is not processed or attended. This allows us to understand how our cueing manipulation impacted attention. 
+The primary analytical technique for the EEG data was an Inverted Encoding Model (IEM). This multivariate pattern analysis method was applied to specific brain waves that are known to correlate with attention (alpha (8-12 Hz) and theta (4-8 Hz) frequency bands). IEM allows us to understand the extent to which target and distractor locations are processed in the brain. Whatever is better processed or attended will have a sharper and consistent representation in IEM compared to what is not processed or not attended. This allows us to understand how our cueing manipulation impacted attention. 
 
 There are two parts to the IEM. First we train the model to learn the mapping between where things appear on the screen and the brain activity that evokes in the participant (training set). Then we “invert” the process with a testing set to estimate which location (distractor or target) was better encoded in the brain, given our cueing manipulation. 
 
@@ -82,7 +85,7 @@ The focus on specific EEG features like alpha and theta wave activity is akin to
 
 ![image](https://github.com/user-attachments/assets/dcad8ef2-efdc-4f44-a747-16325825ba6a)
 
-The top panel in this image above shows comparison between cued target location and un-cued target location at alpha .05 level. We can see better reconstruction of the cued target location compared to the un-cued target location (un-cued stimulus in the distractor cue condition) around 200 ms in the cue period. Similarly, the bottom panel shows comparison between cued distractor location and un-cued distractor location at alpha .05 level. We see better reconstruction in the cued distractor location compared to un-cued distractor location (un-cued stimulus location in the target cue condition) around 400ms in the cue period.
+The top panel in this image above shows comparison between cued target location and un-cued target location (in the distractor cue condition) at alpha .05 level. We can see better reconstruction of the cued target location compared to the un-cued target location (un-cued stimulus in the distractor cue condition) around 200 ms in the cue period. Similarly, the bottom panel shows comparison between cued distractor location and un-cued distractor location at alpha .05 level. We see better reconstruction in the cued distractor location compared to un-cued distractor location (un-cued stimulus location in the target cue condition) around 400ms in the cue period. Reconstruction of the cued distractor location suggests that there is no inhibition of that location. 
 
 ![image](https://github.com/user-attachments/assets/f4686f10-b2d0-4631-adf1-67fcc530258d)
 
@@ -90,7 +93,7 @@ In the top panel of this image above, we see that there is greater selectivity i
 
 Overall we see that there is reconstruction of the cued target location, suggesting this information is carried in alpha band activity. This is some evidence that the distractor location is represented in the alpha band activity, but little evidence that the representation is inhibited. Both of the analyses above were conducted in alpha band activity. Analyses of theta band activity showed greated representation of distractors but still no evidence of inhibition of the distractor location as a function of cueing. 
 
-Together the behavioral and EEG data show that compared to no preview or cueing of location, target cueing is most effective in reducing distraction, followed by distractor cueing. However, we don't see any evidence that distractor cueing is a result of inhibition at the cued location. It is more likely that an indication to "ignore left" is converted to a signal to "attend right" which leads to facilitation of likely target locaiton. Another similar possibility is the cueing of a distractor location involves a "tag and avoid" where the distractor location is processed to some extent and avoided during search. 
+Together the behavioral and EEG data show that compared to no preview or cueing of location, target cueing is most effective in reducing distraction, followed by distractor cueing. However, we don't see any evidence that distractor cueing is a result of inhibition at the cued location. It is more likely that an indication to "ignore left" via a distractor cue is converted to a signal to "attend right" which leads to facilitation of likely target locaiton. Another possibility is that cueing of a distractor location involves a "tag and avoid" where the distractor location is processed to some extent and avoided during search. 
 
 
 
