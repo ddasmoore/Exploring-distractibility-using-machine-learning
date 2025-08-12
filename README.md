@@ -25,7 +25,7 @@ There are several possibilities:
 1) knowledge of a distractor’s location can help us find our target faster by narrowing down/reducing where the target can be
 2) knowledge of a distractor location can help us suppress/inhibit that location thereby making finding that target easier
 3) knowledge of a distractor’s location can in fact distract us from finding the target
-4) knmowledge of a distractor's location can have no impact at all
+4) knowledge of a distractor's location can have no impact at all
 
 ## Method
 I designed an experiment using a visual task to study this question. I created a task where participants were presented with a target and a distractor object on every trial. Participants were instructed to identify the target. On every trial, participants were cued (or given a preview) of the target or distractor’s location or no proivded no cue at all. The cue, when presented, was valid 80% of the time.  I measured behavior (accuracy, reaction time), brain activity patterns using EEG and recorded eye movements using an eye tracker on every trial. I wanted to see how the independent variable- cue manipulation- impacted the dependent variables- behavior and brain activity. 
